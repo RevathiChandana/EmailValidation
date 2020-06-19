@@ -9,7 +9,12 @@ valid_password()
 		then
 			if [[ $1 =~ ^[a-zA-Z@#!]*[0-9]+[a-zA-Z@#!]*$ ]]
 			then
-                		echo "valid password"
+				if [[ $1 =~ ^([a-zA-Z0-9]*)[^a-zA-Z_0-9\s]([a-zA-Z0-9]*)$ ]]
+                		then
+					echo "valid password"
+				else
+					echo "atleast one special character required in password"
+				fi
 			else
 				echo "atleast one numeric number is required in password"
 			fi
