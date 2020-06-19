@@ -1,14 +1,13 @@
 #!/bin/bash
 shopt -s extglob
-echo "To check Email validation"
-read -p " enter mobile number using format  : " mobile_number
-valid_mobile_number()
+read -p " enter password  : " password
+valid_password()
 {
-        if [[ $1 =~ ^[0-9]{2}[[:space:]][0-9]{10}$ ]]
+        if [[ $1 =~ ^([a-zA-Z0-9@#!]{8,})$ ]]
         then
-                echo "valid mobile number"
+                echo "valid password"
         else
-                echo "not a valid mobile number."
+                echo "password sholud contain minimum 8 characters"
         fi
 }
-valid_mobile_number $mobile_number
+valid_password $password
