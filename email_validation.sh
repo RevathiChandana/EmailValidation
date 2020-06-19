@@ -1,14 +1,14 @@
-#!/bin/bash -x
+#!/bin/bash
 shopt -s extglob
 echo "To check Email validation"
-read -p " enter email_id : " email_id
-print_valid_email_id()
+read -p " enter mobile number using format  : " mobile_number
+valid_mobile_number()
 {
-        if [[ $1 =~ ^([A-Za-z0-9.-+_]+@[A-Za-z0-9]+\.[A-Za-z]{2,6})$ ]]
+        if [[ $1 =~ ^[0-9]{2}[[:space:]][0-9]{10}$ ]]
         then
-                echo "validate"
+                echo "valid mobile number"
         else
-                echo "not a valid email id."
+                echo "not a valid mobile number."
         fi
 }
-print_valid_email_id $email_id
+valid_mobile_number $mobile_number
