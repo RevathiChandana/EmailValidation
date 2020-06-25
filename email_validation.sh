@@ -3,7 +3,7 @@ shopt -s extglob
 read -p " enter password  : " password
 valid_password()
 {
-        if [[ $1 =~ ^([a-zA-Z0-9@#!]{8,})$ ]]
+        if [[ $1 =~ ^([a-zA-Z0-9@#!]){8,}$ ]]
         then
 		if [[ $1 =~ ^([a-z0-9@#!]*)[A-Z]+([a-z0-9@#!]*)$ ]]
 		then
